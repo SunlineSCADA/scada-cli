@@ -1,0 +1,26 @@
+version: '3'
+services:
+  site:
+    image: registry.nashascada.site/scada-site-beta
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-file: '5'
+        max-size: '10m'
+    volumes:
+      - ./config.json:/app/projects/default.json:ro
+      - ./data:/app/data
+    ports:
+      - 80:80
+  core:
+    image: registry.nashascada.site/scada-core-beta
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-file: '5'
+        max-size: '10m'
+    volumes:
+      - ./config.json:/app/config.json:ro
+      - ./data/configs:/app/configs:ro

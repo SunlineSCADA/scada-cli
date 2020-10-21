@@ -1,0 +1,20 @@
+{
+    "url": "${SCADA_URL}",
+    "data_path": "./data",
+    "yandex_metrika_id": 65311570,
+
+    "database": {
+        "host": "${DB_HOST}",
+        "user": "${DB_USER}",
+        "password": "${DB_PASSWORD}",
+        "database": "${DB_DATABASE}"
+    },
+
+    "core": {
+        "id": "main_core",
+
+        "frequency_control": 1,
+        "frequency_db": 10,
+        "frequency_archive": 600
+    }
+}
